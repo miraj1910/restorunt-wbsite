@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bistro Aurelia | About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mist: '#f4efe6',
+            amber: '#c8a76a'
+          },
+          fontFamily: {
+            display: ['\"Cormorant Garamond\"', 'serif'],
+            body: ['\"Manrope\"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body class="antialiased" data-page="about">
+  <div class="grain-overlay"></div>
+  <div class="scene-root">
+    <header class="fixed top-4 left-0 right-0 z-50 px-4 md:px-8">
+      <nav id="main-nav" class="glass-nav mx-auto max-w-6xl rounded-full px-5 py-3 md:px-8 md:py-4">
+        <div class="flex items-center justify-between gap-6">
+          <a href="index.html" class="font-display text-xl tracking-[0.2em] text-mist">BISTRO AURELIA</a>
+          <div class="hidden md:flex items-center gap-7 text-sm uppercase tracking-[0.2em] text-mist/90">
+            <a data-nav="home" class="hover:text-amber transition-colors" href="index.html">Home</a>
+            <a data-nav="about" class="hover:text-amber transition-colors" href="about.html">About</a>
+            <a data-nav="menu" class="hover:text-amber transition-colors" href="menu.html">Menu</a>
+            <a data-nav="press" class="hover:text-amber transition-colors" href="press.html">Press</a>
+            <a data-nav="reservation" class="hover:text-amber transition-colors" href="reservation.html">Reserve</a>
+          </div>
+          <a href="reservation.html" class="text-xs md:text-sm uppercase tracking-[0.2em] text-amber hover:text-mist transition-colors">Book</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-28 md:pt-36">
+      <section class="page-hero px-6 md:px-10 flex items-center" data-parallax="0.02">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center w-full">
+          <div class="reveal">
+            <p class="uppercase tracking-[0.3em] text-xs text-amber">About Bistro Aurelia</p>
+            <h1 class="font-display text-6xl md:text-7xl leading-[0.9] mt-4">A House Built For Sensory Ritual</h1>
+            <p class="mt-6 text-mist/80 leading-relaxed max-w-xl">Our atelier was designed to make dining feel theatrical yet intimate, balancing craft, precision, and graceful hospitality.</p>
+          </div>
+          <article class="tilt-card reveal rounded-[1.75rem] overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" alt="Restaurant ambience" class="w-full h-[26rem] object-cover" />
+            <span class="tilt-glare"></span>
+          </article>
+        </div>
+      </section>
+
+      <section class="px-6 md:px-10 pb-24" data-parallax="0.04">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
+          <div class="section-panel reveal rounded-3xl p-8">
+            <h2 class="font-display text-4xl">Philosophy</h2>
+            <p class="mt-4 text-mist/80">Seasonality leads every decision. We build each course around texture, contrast, and emotional pacing.</p>
+          </div>
+          <div class="section-panel reveal rounded-3xl p-8">
+            <h2 class="font-display text-4xl">Craft</h2>
+            <p class="mt-4 text-mist/80">Technique is present but not loud, allowing ingredients and atmosphere to carry the narrative.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="px-6 md:px-10 pb-10">
+      <div class="max-w-6xl mx-auto reveal section-panel rounded-3xl px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="font-display text-3xl tracking-[0.12em]">BISTRO AURELIA</p>
+        <a href="reservation.html" class="btn-3d"><span class="btn-3d-depth"></span><span class="btn-3d-layer">Reserve</span></a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>
