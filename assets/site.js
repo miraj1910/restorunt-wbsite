@@ -19,6 +19,12 @@
     const liveLights = document.getElementById('hero-live-lights');
     if (!wrap) return;
 
+    // Prefer the lightweight visual on phones for consistent performance/compatibility.
+    if (isMobile) {
+      if (fallback) fallback.classList.add('visible');
+      return;
+    }
+
     if (!window.THREE) {
       if (fallback) fallback.classList.add('visible');
       return;
@@ -279,6 +285,32 @@
     window.addEventListener('resize', onResize);
   }
 
+  function setupMobileNav() {
+    const toggle = document.querySelector('[data-mobile-toggle]');
+    const menu = document.querySelector('[data-mobile-menu]');
+    if (!toggle || !menu) return;
+
+    const closeMenu = () => {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        closeMenu();
+      }
+    });
+  }
+
   function setupTiltCards() {
     const cards = document.querySelectorAll('.tilt-card');
     cards.forEach((card) => {
@@ -384,6 +416,7 @@
 
   function init() {
     markActiveNav();
+    setupMobileNav();
     setupHeroScene();
     setupTiltCards();
     setupRevealObserver();

@@ -36,9 +36,9 @@
 
   <div class="scene-root">
     <header class="fixed top-4 left-0 right-0 z-50 px-4 md:px-8">
-      <nav id="main-nav" class="glass-nav mx-auto max-w-6xl rounded-full px-5 py-3 md:px-8 md:py-4">
-        <div class="flex items-center justify-between gap-6">
-          <a href="index.html" class="font-display text-xl tracking-[0.2em] text-mist">BISTRO AURELIA</a>
+      <nav id="main-nav" class="glass-nav mx-auto max-w-6xl rounded-[1.7rem] px-5 py-3 md:rounded-full md:px-8 md:py-4">
+        <div class="flex items-center justify-between gap-4 md:gap-6">
+          <a href="index.html" class="font-display text-sm sm:text-base md:text-xl tracking-[0.12em] sm:tracking-[0.16em] md:tracking-[0.2em] text-mist whitespace-nowrap">BISTRO AURELIA</a>
           <div class="hidden md:flex items-center gap-7 text-sm uppercase tracking-[0.2em] text-mist/90">
             <a data-nav="home" class="hover:text-amber transition-colors" href="index.html">Home</a>
             <a data-nav="about" class="hover:text-amber transition-colors" href="about.html">About</a>
@@ -46,7 +46,22 @@
             <a data-nav="press" class="hover:text-amber transition-colors" href="press.html">Press</a>
             <a data-nav="reservation" class="hover:text-amber transition-colors" href="reservation.html">Reserve</a>
           </div>
-          <a href="reservation.html" class="text-xs md:text-sm uppercase tracking-[0.2em] text-amber hover:text-mist transition-colors">Book</a>
+          <div class="flex items-center gap-2">
+            <a href="reservation.html" class="hidden sm:inline text-xs md:text-sm uppercase tracking-[0.2em] text-amber hover:text-mist transition-colors">Book</a>
+            <button type="button" class="mobile-nav-toggle md:hidden" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+              <span class="text-xs uppercase tracking-[0.2em]">Menu</span>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-menu" data-mobile-menu class="mobile-menu mt-3 md:hidden">
+          <div class="section-panel rounded-2xl p-2 space-y-1">
+            <a data-nav="home" class="mobile-nav-link" href="index.html">Home</a>
+            <a data-nav="about" class="mobile-nav-link" href="about.html">About</a>
+            <a data-nav="menu" class="mobile-nav-link" href="menu.html">Menu</a>
+            <a data-nav="press" class="mobile-nav-link" href="press.html">Press</a>
+            <a data-nav="reservation" class="mobile-nav-link" href="reservation.html">Reserve</a>
+            <a class="mobile-nav-link" href="reservation.html">Book</a>
+          </div>
         </div>
       </nav>
     </header>
