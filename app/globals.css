@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --easing-luxury: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -31,6 +35,16 @@ body::before {
   pointer-events: none;
   background: radial-gradient(circle at center, transparent 40%, rgba(6, 7, 9, 0.25));
   z-index: 0;
+}
+
+.global-background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .grain-overlay {
@@ -587,5 +601,16 @@ main {
   #main-nav {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
 }
